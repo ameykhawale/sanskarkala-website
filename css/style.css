@@ -1224,3 +1224,18 @@ CONTACT CARDS
 .contact-phone:hover{color:var(--secondary);}
 
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+
+@media (max-width: 768px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  img, .gallery-grid, .products-grid, .contact-grid, .offer-grid, .mood-grid {
+    max-width: 100%;
+  }
+}
