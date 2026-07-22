@@ -1325,3 +1325,25 @@ CHAFAI SECTION
   .chafai-title{font-size:36px;}
   .chafai-gallery{grid-template-columns:1fr;}
 }
+/*=========================
+BUG FIXES
+=========================*/
+
+/* Fix: phone number wrapping in navbar */
+.nav-phone{white-space:nowrap;}
+
+/* Fix: Creations section text color (override leftover old rule) */
+.creations h2{color:var(--primary) !important;}
+.creations p{color:#555 !important;}
+.creations .section-tag{background:rgba(245,130,32,.12) !important;color:var(--secondary) !important;}
+
+/* Fix: Deep Navy swatch invisible against same-colour background */
+.mood-item .swatch{border:3px solid rgba(255,255,255,.4);}
+
+/* Fix: mood grid not stacking on mobile */
+@media(max-width:860px){
+  .mood-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:560px){
+  .mood-grid{grid-template-columns:1fr;}
+}
