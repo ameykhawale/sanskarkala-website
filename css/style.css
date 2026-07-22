@@ -1239,3 +1239,19 @@ CONTACT CARDS
     max-width: 100%;
   }
 }
+/*=========================
+NAVBAR PHONE
+=========================*/
+.nav-phone{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--secondary);color:#fff !important;
+  padding:8px 18px;border-radius:50px;
+  font-weight:700;font-size:15px;text-decoration:none;
+  margin-left:10px;transition:background .2s ease;
+}
+.nav-phone:hover{background:var(--primary);color:#fff !important;}
+.nav-phone i{font-size:13px;}
+
+@media(max-width:991px){
+  .nav-phone{margin-left:0;margin-top:10px;justify-content:center;}
+}
