@@ -1255,3 +1255,73 @@ NAVBAR PHONE
 @media(max-width:991px){
   .nav-phone{margin-left:0;margin-top:10px;justify-content:center;}
 }
+/*=========================
+OUR BRANDS SECTION
+=========================*/
+.brands-section{background:var(--white);padding:90px 0;}
+.brands-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.brand-card{
+  background:var(--cream);border-radius:var(--radius);
+  padding:44px 36px;text-align:center;box-shadow:var(--shadow);
+  transition:transform .3s ease;
+}
+.brand-card:hover{transform:translateY(-6px);}
+.brand-mark{
+  width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-family:var(--heading);font-size:22px;font-weight:700;
+  margin:0 auto 20px;
+}
+.brand-card h3{font-size:24px;margin-bottom:14px;}
+.brand-card p{font-size:15px;color:#555;margin-bottom:22px;}
+.brand-link{
+  font-weight:700;font-size:14px;text-decoration:none;color:var(--secondary);
+}
+.brand-card.chafai .brand-link{color:#6E1423;}
+.brand-link:hover{text-decoration:underline;}
+
+@media(max-width:768px){.brands-grid{grid-template-columns:1fr;}}
+/*=========================
+CHAFAI SECTION
+=========================*/
+.chafai-section{
+  background:#FBF3E7;
+  padding:100px 0;
+  border-top:1px solid rgba(110,20,35,.15);
+  border-bottom:1px solid rgba(110,20,35,.15);
+}
+.chafai-image-wrap{
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 30px 60px rgba(110,20,35,.18);
+}
+.chafai-tag{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:18px;color:#6E1423;letter-spacing:1px;margin-bottom:14px;
+}
+.chafai-title{
+  font-family:var(--heading);font-size:48px;color:#6E1423;margin-bottom:6px;
+}
+.chafai-subtitle{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:20px;color:#8a5c00;margin-bottom:26px;
+}
+.chafai-text{font-size:16px;color:#4a4a4a;margin-bottom:20px;line-height:1.75;}
+.chafai-contact{
+  margin-top:28px;padding-top:24px;border-top:1px solid rgba(110,20,35,.2);
+}
+.chafai-contact-label{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#8a5c00;margin-bottom:6px;}
+.chafai-contact-name{font-weight:600;font-size:16px;color:#333;margin-bottom:8px;}
+.chafai-phone{font-weight:700;font-size:17px;color:#6E1423;text-decoration:none;}
+.chafai-phone:hover{color:#8a5c00;}
+
+.chafai-gallery{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:70px;
+}
+.chafai-gallery img{
+  width:100%;border-radius:14px;box-shadow:0 20px 40px rgba(110,20,35,.15);
+}
+
+@media(max-width:768px){
+  .chafai-title{font-size:36px;}
+  .chafai-gallery{grid-template-columns:1fr;}
+}
