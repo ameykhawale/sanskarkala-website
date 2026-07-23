@@ -1347,3 +1347,26 @@ BUG FIXES
 @media(max-width:560px){
   .mood-grid{grid-template-columns:1fr;}
 }
+
+/*=========================
+SCROLLING NOTICE BAR
+=========================*/
+.notice-marquee{
+  background:#6E1423;color:#F4E9D8;
+  overflow:hidden;white-space:nowrap;
+  padding:9px 0;position:relative;z-index:1001;
+}
+.notice-track{
+  display:inline-block;
+  animation:marquee-scroll 22s linear infinite;
+  font-size:14px;font-weight:500;
+}
+@keyframes marquee-scroll{
+  0%{transform:translateX(0%);}
+  100%{transform:translateX(-50%);}
+}
+
+@media(max-width:600px){
+  .notice-track{font-size:12.5px;}
+}
+.custom-navbar{ top: 38px; }
