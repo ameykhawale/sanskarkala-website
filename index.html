@@ -328,15 +328,33 @@ AOS.init({ duration: 1000, once: true });
 </script>
 
 <script>
+  function scrollToHash(hash) {
+    if (!hash) return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+    const header = document.querySelector('.custom-navbar');
+    const notice = document.querySelector('.notice-marquee');
+    const headerHeight = (header ? header.offsetHeight : 0) + (notice ? notice.offsetHeight : 0);
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+    window.scrollTo({ top: targetPosition, behavior: 'instant' });
+  }
+
+  // Run on initial load
   window.addEventListener('load', function() {
-    if (window.location.hash) {
-      const target = document.querySelector(window.location.hash);
-      if (target) {
-        setTimeout(function() {
-          target.scrollIntoView();
-        }, 100);
-      }
-    }
+    scrollToHash(window.location.hash);
+    // Re-run after a delay to correct for any late image/layout shifts
+    setTimeout(function() { scrollToHash(window.location.hash); }, 600);
+    setTimeout(function() { scrollToHash(window.location.hash); }, 1200);
+  });
+
+  // Also handle clicking nav links directly (in case hash doesn't change, e.g. already on page)
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const hash = this.getAttribute('href');
+      history.pushState(null, null, hash);
+      scrollToHash(hash);
+    });
   });
 </script>
 
