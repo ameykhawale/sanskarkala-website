@@ -327,5 +327,18 @@ AOS.init({ duration: 1000, once: true });
   document.getElementById('last-modified').textContent = document.lastModified;
 </script>
 
+<script>
+  window.addEventListener('load', function() {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(function() {
+          target.scrollIntoView();
+        }, 100);
+      }
+    }
+  });
+</script>
+
 </body>
 </html>
