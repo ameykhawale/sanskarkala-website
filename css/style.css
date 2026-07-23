@@ -1370,3 +1370,23 @@ SCROLLING NOTICE BAR
   .notice-track{font-size:12.5px;}
 }
 .custom-navbar{ top: 38px; }
+/*=========================
+FIX: CHAFAI GALLERY IMAGE SIZE/OVERFLOW (v2)
+=========================*/
+.chafai-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:70px;
+}
+.chafai-gallery img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 20px 40px rgba(110,20,35,.15);
+}
+
+#classes, #gallery, #creations, #chafai, #about, #contact{
+  scroll-margin-top: 100px;
+}
