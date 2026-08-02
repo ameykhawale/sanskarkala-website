@@ -359,7 +359,7 @@ AOS.init({ duration: 1000, once: true });
     const header = document.querySelector('.custom-navbar');
     const notice = document.querySelector('.notice-marquee');
     const headerHeight = (header ? header.offsetHeight : 0) + (notice ? notice.offsetHeight : 0);
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 30;
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
     window.scrollTo({
       top: targetPosition,
       behavior: smooth ? 'smooth' : 'instant'
