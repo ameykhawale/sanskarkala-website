@@ -1119,19 +1119,52 @@ a.navbar-brand{
 /*=========================
 FIX: NAVBAR OVERFLOW / CUTOFF ON MEDIUM SCREENS
 =========================*/
-@media (min-width: 992px) and (max-width: 1300px){
+@media (min-width: 992px) and (max-width: 1400px){
   .nav-link{
-    margin-left:14px !important;
-    font-size:0.85rem !important;
+    margin-left:12px !important;
+    font-size:0.82rem !important;
   }
   .nav-phone{
-    padding:7px 14px !important;
-    font-size:13px !important;
+    padding:6px 12px !important;
+    font-size:12px !important;
+    margin-left:6px !important;
+  }
+  .nav-phone i{
+    font-size:11px !important;
+  }
+  .navbar-brand{
+    font-size:1.4rem !important;
   }
 }
 
-@media (max-width: 1300px){
+@media (min-width: 992px) and (max-width: 1200px){
+  .nav-link{
+    margin-left:8px !important;
+    font-size:0.78rem !important;
+  }
+  .nav-phone{
+    padding:5px 10px !important;
+    font-size:11px !important;
+    margin-left:4px !important;
+  }
+  .navbar-brand{
+    font-size:1.3rem !important;
+  }
+}
+
+@media (max-width: 1400px){
   .navbar-nav{
     flex-wrap:nowrap !important;
+  }
+  .custom-navbar .container{
+    max-width:100% !important;
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+}
+
+@media (min-width: 1400px){
+  .custom-navbar .container{
+    max-width:1320px !important;
   }
 }
