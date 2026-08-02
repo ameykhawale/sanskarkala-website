@@ -1388,3 +1388,18 @@ FIX: CHAFAI GALLERY IMAGE SIZE/OVERFLOW (v2)
 }
 
 }
+/*=========================
+CHAFAI VIDEO
+=========================*/
+.chafai-video-wrap{
+  margin-top:40px;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(110,20,35,.18);
+}
+.chafai-video-wrap video{
+  width:100%;
+  display:block;
+  max-height:520px;
+  background:#000;
+}
