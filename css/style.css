@@ -44,55 +44,34 @@ RESET
 =========================*/
 
 *{
-
 margin:0;
-
 padding:0;
-
 box-sizing:border-box;
-
 scroll-behavior:smooth;
-
 }
 
 body{
-
 font-family:var(--body);
-
 color:var(--text);
-
 background:var(--cream);
-
 line-height:1.8;
-
 overflow-x:hidden;
-
 }
 
 img{
-
 max-width:100%;
-
 display:block;
-
 }
 
 a{
-
 text-decoration:none;
-
 transition:var(--transition);
-
 }
 
 ul{
-
 list-style:none;
-
 padding:0;
-
 margin:0;
-
 }
 
 
@@ -101,71 +80,43 @@ TYPOGRAPHY
 =========================*/
 
 h1,h2,h3,h4,h5{
-
 font-family:var(--heading);
-
 font-weight:600;
-
 color:var(--primary);
-
 }
 
 h1{
-
 font-size:64px;
-
 line-height:1.15;
-
 margin-bottom:20px;
-
 }
 
 h2{
-
 font-size:42px;
-
 margin-bottom:20px;
-
 }
 
 h3{
-
 font-size:28px;
-
 }
 
 p{
-
 font-size:17px;
-
 color:#555;
-
 margin-bottom:20px;
-
 }
 
 .section-tag{
-
 display:inline-block;
-
 padding:8px 22px;
-
 background:rgba(245,130,32,.12);
-
 color:var(--secondary);
-
 border-radius:50px;
-
 font-size:14px;
-
 font-weight:600;
-
 letter-spacing:2px;
-
 text-transform:uppercase;
-
 margin-bottom:18px;
-
 }
 
 
@@ -174,9 +125,7 @@ SECTION SPACING
 =========================*/
 
 .section-space{
-
 padding:120px 0;
-
 }
 
 
@@ -185,57 +134,35 @@ BUTTONS
 =========================*/
 
 .btn{
-
 padding:15px 38px;
-
 border-radius:50px;
-
 font-weight:600;
-
 transition:var(--transition);
-
 }
 
 .btn-primary-custom{
-
 background:var(--secondary);
-
 color:#fff;
-
 border:none;
-
 }
 
 .btn-primary-custom:hover{
-
 background:var(--primary);
-
 transform:translateY(-3px);
-
 color:#fff;
-
 box-shadow:var(--shadow);
-
 }
 
 .btn-outline-custom{
-
 border:2px solid #fff;
-
 color:#fff;
-
 background:transparent;
-
 margin-left:15px;
-
 }
 
 .btn-outline-custom:hover{
-
 background:#fff;
-
 color:var(--primary);
-
 }
 
 
@@ -244,65 +171,39 @@ NAVBAR
 =========================*/
 
 .custom-navbar{
-
 padding:20px 0;
-
 transition:.4s;
-
 background:transparent;
-
 }
 
 .navbar-brand{
-
 font-family:var(--heading);
-
 font-size:32px;
-
 font-weight:700;
-
 color:#fff !important;
-
 letter-spacing:2px;
-
 }
 
 .nav-link{
-
 color:#fff !important;
-
 margin-left:28px;
-
 font-weight:500;
-
 position:relative;
-
 }
 
 .nav-link::after{
-
 content:"";
-
 position:absolute;
-
 left:0;
-
 bottom:-5px;
-
 height:2px;
-
 width:0;
-
 background:var(--secondary);
-
 transition:.4s;
-
 }
 
 .nav-link:hover::after{
-
 width:100%;
-
 }
 
 
@@ -311,25 +212,17 @@ SCROLLED NAVBAR
 =========================*/
 
 .custom-navbar.scrolled{
-
 background:#ffffff;
-
 box-shadow:0 8px 30px rgba(0,0,0,.08);
-
 padding:14px 0;
-
 }
 
 .custom-navbar.scrolled .navbar-brand{
-
 color:var(--primary)!important;
-
 }
 
 .custom-navbar.scrolled .nav-link{
-
 color:var(--primary)!important;
-
 }
 
 
@@ -338,101 +231,61 @@ HERO
 =========================*/
 
 .hero{
-
 position:relative;
-
 height:100vh;
-
 display:flex;
-
 align-items:center;
-
 justify-content:center;
-
 background:url("../hero/hero.jpg") center center/cover no-repeat;
-
 overflow:hidden;
-
+padding-top:120px;
 }
 
 .overlay{
-
 position:absolute;
-
 top:0;
-
 left:0;
-
 width:100%;
-
 height:100%;
-
 background:linear-gradient(
-
 rgba(8,25,45,.70),
-
 rgba(8,25,45,.60)
-
 );
-
 }
 
 .hero-content{
-
 position:relative;
-
 z-index:2;
-
 color:#fff;
-
 }
 
 .hero-tag{
-
 font-size:18px;
-
 letter-spacing:3px;
-
 text-transform:uppercase;
-
 color:#FFD27A;
-
 margin-bottom:20px;
-
 }
 
 .hero h1{
-
 color:#fff;
-
 }
 
 .hero-subtitle{
-
 font-size:28px;
-
 font-family:var(--quote);
-
 color:#fff;
-
 margin-bottom:25px;
-
 }
 
 .hero-description{
-
 font-size:18px;
-
 color:#f5f5f5;
-
 margin-bottom:45px;
-
 }
 
 .hero-buttons{
-
 margin-top:20px;
-
 }
 
 
@@ -441,37 +294,22 @@ SCROLL INDICATOR
 =========================*/
 
 .scroll-indicator{
-
 position:absolute;
-
 bottom:40px;
-
 left:50%;
-
 transform:translateX(-50%);
-
 font-size:24px;
-
 color:#fff;
-
 animation:bounce 2s infinite;
-
 }
 
 @keyframes bounce{
-
 0%,100%{
-
 transform:translate(-50%,0);
-
 }
-
 50%{
-
 transform:translate(-50%,12px);
-
 }
-
 }
 
 
@@ -480,11 +318,8 @@ IMAGE
 =========================*/
 
 .story img{
-
 border-radius:20px;
-
 box-shadow:var(--shadow);
-
 }
 
 
@@ -493,27 +328,19 @@ UTILITIES
 =========================*/
 
 .shadow-lg{
-
 box-shadow:var(--shadow)!important;
-
 }
 
 .rounded-4{
-
 border-radius:20px!important;
-
 }
 
 .text-primary{
-
 color:var(--primary)!important;
-
 }
 
 .text-secondary{
-
 color:var(--secondary)!important;
-
 }
 /*====================================================
 
@@ -527,39 +354,26 @@ STORY SECTION
 =========================*/
 
 .story{
-
 background:#ffffff;
-
 }
 
 .story h2{
-
 font-size:44px;
-
 margin-bottom:25px;
-
 line-height:1.3;
-
 }
 
 .story p{
-
 font-size:18px;
-
 color:#555;
-
 }
 
 .story img{
-
 transition:.5s;
-
 }
 
 .story img:hover{
-
 transform:scale(1.03);
-
 }
 
 
@@ -568,27 +382,18 @@ ABOUT SECTION
 =========================*/
 
 .about-preview{
-
 background:var(--cream);
-
 text-align:center;
-
 }
 
 .about-preview h2{
-
 margin-bottom:25px;
-
 }
 
 .about-preview p{
-
 max-width:800px;
-
 margin:auto;
-
 font-size:18px;
-
 }
 
 
@@ -597,49 +402,31 @@ CLASSES
 =========================*/
 
 .classes{
-
 background:#ffffff;
-
 }
 
 .class-card{
-
 background:#fff;
-
 border-radius:20px;
-
 padding:35px;
-
 box-shadow:var(--shadow);
-
 transition:.4s;
-
 height:100%;
-
 text-align:center;
-
 }
 
 .class-card:hover{
-
 transform:translateY(-12px);
-
 }
 
 .class-card i{
-
 font-size:45px;
-
 color:var(--secondary);
-
 margin-bottom:20px;
-
 }
 
 .class-card h3{
-
 margin-bottom:15px;
-
 }
 
 
@@ -648,80 +435,25 @@ WORKSHOPS
 =========================*/
 
 .workshops{
-
 background:#FFF8F1;
-
 }
 
 .workshop-card{
-
 background:#fff;
-
 padding:35px;
-
 border-radius:20px;
-
 transition:.4s;
-
 box-shadow:var(--shadow);
-
 height:100%;
-
 }
 
 .workshop-card:hover{
-
 transform:translateY(-10px);
-
 }
 
 .workshop-card img{
-
 border-radius:15px;
-
 margin-bottom:25px;
-
-}
-
-
-/*=========================
-CREATIONS
-=========================*/
-
-.creations{
-
-background:linear-gradient(
-
-135deg,
-
-#163A70,
-
-#224C8A
-
-);
-
-color:#fff;
-
-text-align:center;
-
-}
-
-.creations h2{
-
-color:#fff;
-
-margin-bottom:20px;
-
-}
-
-.creations p{
-
-color:#ececec;
-
-max-width:700px;
-
-margin:auto;
-
 }
 
 
@@ -730,41 +462,27 @@ FOOTER
 =========================*/
 
 footer{
-
 background:#0d274d;
-
 padding:70px 0 35px;
-
 color:#fff;
-
 }
 
 footer h3{
-
 color:#fff;
-
 margin-bottom:20px;
-
 }
 
 footer p{
-
 color:#d6d6d6;
-
 margin-bottom:10px;
-
 }
 
 footer a{
-
 color:#d6d6d6;
-
 }
 
 footer a:hover{
-
 color:var(--secondary);
-
 }
 
 
@@ -773,25 +491,17 @@ SECTION TITLES
 =========================*/
 
 .section-title{
-
 margin-bottom:60px;
-
 text-align:center;
-
 }
 
 .section-title h2{
-
 margin-top:15px;
-
 }
 
 .section-title p{
-
 max-width:700px;
-
 margin:auto;
-
 }
 
 
@@ -800,25 +510,16 @@ GENERAL CARD
 =========================*/
 
 .card-modern{
-
 background:#fff;
-
 padding:35px;
-
 border-radius:20px;
-
 box-shadow:var(--shadow);
-
 transition:.4s;
-
 height:100%;
-
 }
 
 .card-modern:hover{
-
 transform:translateY(-10px);
-
 }
 
 
@@ -827,23 +528,16 @@ IMAGE EFFECTS
 =========================*/
 
 .image-hover{
-
 overflow:hidden;
-
 border-radius:20px;
-
 }
 
 .image-hover img{
-
 transition:.5s;
-
 }
 
 .image-hover:hover img{
-
 transform:scale(1.08);
-
 }
 
 
@@ -852,33 +546,22 @@ ANIMATION HELPERS
 =========================*/
 
 .fade-up{
-
 transform:translateY(40px);
-
 opacity:0;
-
 transition:.8s;
-
 }
 
 .fade-up.show{
-
 transform:translateY(0);
-
 opacity:1;
-
 }
 
 .zoom{
-
 transition:.4s;
-
 }
 
 .zoom:hover{
-
 transform:scale(1.05);
-
 }
 
 
@@ -887,172 +570,93 @@ RESPONSIVE
 =========================*/
 
 @media(max-width:1200px){
-
 .hero h1{
-
 font-size:54px;
-
 }
-
 .story h2{
-
 font-size:38px;
-
 }
-
 }
 
 
 @media(max-width:992px){
-
 .section-space{
-
 padding:90px 0;
-
 }
-
 .hero{
-
 text-align:center;
-
 }
-
 .hero h1{
-
 font-size:46px;
-
 }
-
 .hero-subtitle{
-
 font-size:24px;
-
 }
-
 .nav-link{
-
 margin-left:0;
-
 padding:15px 0;
-
 }
-
 .story img{
-
 margin-bottom:40px;
-
 }
-
 .btn-outline-custom{
-
 margin-left:0;
-
 margin-top:15px;
-
 }
-
 }
 
 
 @media(max-width:768px){
-
 h1{
-
 font-size:38px;
-
 }
-
 h2{
-
 font-size:32px;
-
 }
-
 .hero-description{
-
 font-size:16px;
-
 }
-
 .hero-buttons .btn{
-
 display:block;
-
 width:100%;
-
 margin-bottom:15px;
-
 }
-
 .btn-outline-custom{
-
 margin-top:0;
-
 }
-
 .section-space{
-
 padding:70px 0;
-
 }
-
 .navbar-brand{
-
 font-size:26px;
-
 }
-
 }
 
 
 @media(max-width:576px){
-
 .hero{
-
 padding:0 15px;
-
 }
-
 .hero-tag{
-
 font-size:14px;
-
 letter-spacing:2px;
-
 }
-
 .hero h1{
-
 font-size:32px;
-
 }
-
 .hero-subtitle{
-
 font-size:20px;
-
 }
-
 .story h2{
-
 font-size:28px;
-
 }
-
 .section-tag{
-
 font-size:12px;
-
 padding:6px 18px;
-
 }
-
 footer{
-
 text-align:center;
-
 }
-
 }
 
 
@@ -1061,36 +665,25 @@ CUSTOM SCROLLBAR
 =========================*/
 
 ::-webkit-scrollbar{
-
 width:10px;
-
 }
 
 ::-webkit-scrollbar-track{
-
 background:#f3f3f3;
-
 }
 
 ::-webkit-scrollbar-thumb{
-
 background:var(--secondary);
-
 border-radius:50px;
-
 }
 
 ::-webkit-scrollbar-thumb:hover{
-
 background:var(--primary);
-
 }
 
 
 /*====================================================
-
-END OF STYLE.CSS
-
+END OF BASE TEMPLATE
 ====================================================*/
 
 /*=========================
@@ -1135,9 +728,11 @@ MOOD / COLOUR PSYCHOLOGY STRIP
 .mood-strip .section-tag{background:rgba(255,210,122,.16);color:#FFD27A;}
 .mood-strip h2{color:#fff;}
 .mood-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:50px;}
-.mood-item .swatch{width:40px;height:40px;border-radius:50%;margin-bottom:16px;}
+.mood-item .swatch{width:40px;height:40px;border-radius:50%;margin-bottom:16px;border:3px solid rgba(255,255,255,.4);}
 .mood-item h4{font-family:var(--heading);color:#FFD27A;font-size:19px;margin-bottom:10px;}
 .mood-item p{color:rgba(255,255,255,.82);font-size:15px;margin-bottom:0;}
+@media(max-width:860px){.mood-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.mood-grid{grid-template-columns:1fr;}}
 
 /*=========================
 GALLERY GRID
@@ -1158,7 +753,10 @@ GALLERY GRID
 /*=========================
 CREATIONS / PRODUCTS
 =========================*/
-.creations{background:var(--cream);}
+.creations{background:var(--cream);text-align:center;}
+.creations h2, .creations h3{color:var(--primary);margin-bottom:20px;}
+.creations p{color:#555;max-width:700px;margin:auto;}
+.creations .section-tag{background:rgba(245,130,32,.12);color:var(--secondary);}
 .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:20px;}
 .product-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);text-align:left;}
 .product-card .pimg{aspect-ratio:4/3;overflow:hidden;}
@@ -1193,6 +791,7 @@ FOOTER OVERRIDES
 footer{background:#0B1E38;color:rgba(255,255,255,.7);padding:50px 0 26px;}
 footer h3{color:#fff;font-family:var(--heading);margin-bottom:10px;}
 footer p{color:rgba(255,255,255,.65);margin-bottom:0;}
+
 /*=========================
 CONTACT CARDS
 =========================*/
@@ -1219,26 +818,19 @@ CONTACT CARDS
 .contact-title{font-size:14px;color:#777;margin-bottom:18px;}
 .contact-phone{
   display:inline-block;font-weight:700;font-size:16px;color:var(--primary);
-  text-decoration:none;border-top:1px solid var(--line);padding-top:16px;width:100%;
+  text-decoration:none;border-top:1px solid rgba(0,0,0,.08);padding-top:16px;width:100%;
 }
 .contact-phone:hover{color:var(--secondary);}
-
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
 
 @media (max-width: 768px) {
-  .offer-grid {
-    grid-template-columns: 1fr;
-  }
+  .offer-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  img, .gallery-grid, .products-grid, .contact-grid, .offer-grid, .mood-grid {
-    max-width: 100%;
-  }
+  .container { padding-left: 20px; padding-right: 20px; }
+  img, .gallery-grid, .products-grid, .contact-grid, .offer-grid, .mood-grid { max-width: 100%; }
 }
+
 /*=========================
 NAVBAR PHONE
 =========================*/
@@ -1248,13 +840,14 @@ NAVBAR PHONE
   padding:8px 18px;border-radius:50px;
   font-weight:700;font-size:15px;text-decoration:none;
   margin-left:10px;transition:background .2s ease;
+  white-space:nowrap;
 }
 .nav-phone:hover{background:var(--primary);color:#fff !important;}
 .nav-phone i{font-size:13px;}
-
 @media(max-width:991px){
   .nav-phone{margin-left:0;margin-top:10px;justify-content:center;}
 }
+
 /*=========================
 OUR BRANDS SECTION
 =========================*/
@@ -1279,8 +872,8 @@ OUR BRANDS SECTION
 }
 .brand-card.chafai .brand-link{color:#6E1423;}
 .brand-link:hover{text-decoration:underline;}
-
 @media(max-width:768px){.brands-grid{grid-template-columns:1fr;}}
+
 /*=========================
 CHAFAI SECTION
 =========================*/
@@ -1318,68 +911,6 @@ CHAFAI SECTION
   display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:70px;
 }
 .chafai-gallery img{
-  width:100%;border-radius:14px;box-shadow:0 20px 40px rgba(110,20,35,.15);
-}
-
-@media(max-width:768px){
-  .chafai-title{font-size:36px;}
-  .chafai-gallery{grid-template-columns:1fr;}
-}
-/*=========================
-BUG FIXES
-=========================*/
-
-/* Fix: phone number wrapping in navbar */
-.nav-phone{white-space:nowrap;}
-
-/* Fix: Creations section text color (override leftover old rule) */
-.creations h2{color:var(--primary) !important;}
-.creations p{color:#555 !important;}
-.creations .section-tag{background:rgba(245,130,32,.12) !important;color:var(--secondary) !important;}
-
-/* Fix: Deep Navy swatch invisible against same-colour background */
-.mood-item .swatch{border:3px solid rgba(255,255,255,.4);}
-
-/* Fix: mood grid not stacking on mobile */
-@media(max-width:860px){
-  .mood-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:560px){
-  .mood-grid{grid-template-columns:1fr;}
-}
-
-/*=========================
-SCROLLING NOTICE BAR
-=========================*/
-.notice-marquee{
-  background:#6E1423;color:#F4E9D8;
-  overflow:hidden;white-space:nowrap;
-  padding:9px 0;position:relative;z-index:1001;
-}
-.notice-track{
-  display:inline-block;
-  animation:marquee-scroll 22s linear infinite;
-  font-size:14px;font-weight:500;
-}
-@keyframes marquee-scroll{
-  0%{transform:translateX(0%);}
-  100%{transform:translateX(-50%);}
-}
-
-@media(max-width:600px){
-  .notice-track{font-size:12.5px;}
-}
-.custom-navbar{ top: 38px; }
-/*=========================
-FIX: CHAFAI GALLERY IMAGE SIZE/OVERFLOW (v2)
-=========================*/
-.chafai-gallery{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-  margin-top:70px;
-}
-.chafai-gallery img{
   width:100%;
   height:340px;
   object-fit:cover;
@@ -1402,23 +933,60 @@ CHAFAI VIDEO
   max-height:520px;
   background:#000;
 }
+
+@media(max-width:768px){
+  .chafai-title{font-size:36px;}
+  .chafai-gallery{grid-template-columns:1fr;}
+}
+
 /*=========================
-FIX: NAVBAR OVERLAP WITH HERO TEXT
+SCROLLING NOTICE BAR
 =========================*/
-.custom-navbar{
-  background:rgba(8,25,45,0.92) !important;
+.notice-marquee{
+  background:#6E1423;color:#F4E9D8;
+  overflow:hidden;white-space:nowrap;
+  padding:9px 0;position:relative;z-index:1001;
 }
-.navbar-brand,
-.custom-navbar .nav-link{
-  color:#fff !important;
+.notice-track{
+  display:inline-block;
+  animation:marquee-scroll 22s linear infinite;
+  font-size:14px;font-weight:500;
 }
-.hero{
-  padding-top:120px;
+@keyframes marquee-scroll{
+  0%{transform:translateX(0%);}
+  100%{transform:translateX(-50%);}
+}
+@media(max-width:600px){
+  .notice-track{font-size:12.5px;}
+}
+
+/*=========================
+SLAM BOOK SECTION
+=========================*/
+.slambook-section{background:var(--cream);}
+.slambook-card{
+  max-width:480px;
+  margin:0 auto;
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:48px 36px;
+  box-shadow:var(--shadow);
+}
+.slambook-icon{
+  font-size:48px;
+  background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:18px;
+  display:block;
+}
+.slambook-card h3{font-size:22px;margin-bottom:12px;}
+.slambook-card p{margin-bottom:24px;}
+
 /*====================================================
 FINAL CLEANUP — resolves leftover conflicting rules
 ====================================================*/
 
-/* Navbar: always solid, never transparent/flashing */
 .custom-navbar,
 .custom-navbar.scrolled{
   background:rgba(8,25,45,0.95) !important;
@@ -1432,55 +1000,91 @@ FINAL CLEANUP — resolves leftover conflicting rules
 }
 .nav-link:hover{ color:#FFD27A !important; }
 
-/* Creations section: force cream background + dark text (kills old navy-gradient leftover) */
-.creations{
-  background:var(--cream) !important;
-}
-.creations h2,
-.creations h3{
-  color:var(--primary) !important;
-}
-.creations p{
-  color:#555 !important;
-}
+.creations{ background:var(--cream) !important; }
+.creations h2, .creations h3{ color:var(--primary) !important; }
+.creations p{ color:#555 !important; }
 .creations .section-tag{
   background:rgba(245,130,32,.12) !important;
   color:var(--secondary) !important;
 }
 
-/* Mood strip: keep this ONE consistently navy, nothing else */
-.mood-strip{
-  background:var(--primary) !important;
-  color:#fff !important;
-}
+.mood-strip{ background:var(--primary) !important; color:#fff !important; }
 .mood-strip h2{ color:#fff !important; }
 .mood-strip .section-tag{
   background:rgba(255,210,122,.16) !important;
   color:#FFD27A !important;
 }
 
-/* Locations: consistent navy block, no bleed */
-.locations{
-  background:var(--primary) !important;
-  color:#fff !important;
-}
+.locations{ background:var(--primary) !important; color:#fff !important; }
 .locations h2{ color:#fff !important; }
 
-/* Chafai section: always its own cream/maroon tone, never inherits navy/blue */
-.chafai-section{
-  background:#FBF3E7 !important;
-}
+.chafai-section{ background:#FBF3E7 !important; }
 .chafai-title{ color:#6E1423 !important; }
 .chafai-text{ color:#4a4a4a !important; }
 
-/* General section backgrounds — remove any stray dark bleed between sections */
-section, header, footer{
-  position:relative;
-  z-index:1;
+section, header, footer{ position:relative; z-index:1; }
+
+html, body{ overflow-x:hidden; width:100%; }
+
+/*====================================================
+REDESIGN v2 — refined typography & visual rhythm
+====================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap');
+
+h1,h2,h3,h4,h5,
+.navbar-brand,
+.chafai-title,
+.brand-mark{
+  font-family:'Playfair Display', serif !important;
+}
+body, p, a, li, .btn{
+  font-family:'Poppins', sans-serif !important;
+}
+.hero-subtitle,
+.chafai-subtitle{
+  font-family:'Cormorant Garamond', serif !important;
 }
 
-/* Prevent horizontal scroll / layout shift causing visual jumps while scrolling */
-html, body{
-  overflow-x:hidden;
-  width:100%;
+h1{ font-size: clamp(2.1rem, 4.2vw, 3.4rem) !important; line-height:1.2 !important; letter-spacing:-0.5px; }
+h2{ font-size: clamp(1.7rem, 3vw, 2.4rem) !important; line-height:1.3 !important; letter-spacing:-0.3px; }
+h3{ font-size: clamp(1.2rem, 2vw, 1.5rem) !important; }
+p{ font-size: 1rem !important; line-height:1.75 !important; color:#5a5a5a !important; }
+.hero-tag{ font-size:0.85rem !important; letter-spacing:2.5px !important; }
+.hero-subtitle{ font-size: clamp(1.1rem, 2vw, 1.5rem) !important; }
+.section-tag{ font-size:0.75rem !important; letter-spacing:1.5px !important; }
+
+.offer-card, .product-card, .contact-card, .brand-card, .slambook-card{
+  box-shadow:0 10px 30px rgba(22,58,112,0.08) !important;
+  transition:transform .35s ease, box-shadow .35s ease !important;
 }
+.offer-card:hover, .product-card:hover, .contact-card:hover{
+  transform:translateY(-6px) !important;
+  box-shadow:0 20px 45px rgba(22,58,112,0.14) !important;
+}
+
+.btn{
+  font-size:0.92rem !important;
+  letter-spacing:0.4px !important;
+  padding:13px 32px !important;
+}
+
+.section-space{ padding:90px 0 !important; }
+@media(max-width:768px){
+  .section-space{ padding:60px 0 !important; }
+}
+
+.section-tag{
+  animation:tagFade .6s ease both;
+}
+@keyframes tagFade{
+  from{opacity:0; transform:translateY(6px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.navbar-brand{ font-size:1.6rem !important; letter-spacing:1px !important; }
+.nav-link{ font-size:0.92rem !important; font-weight:500 !important; }
+
+/*====================================================
+END OF STYLE.CSS
+====================================================*/

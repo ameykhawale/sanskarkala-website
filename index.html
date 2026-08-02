@@ -260,6 +260,13 @@
       <img src="gallery/chafai-logo.jpg" alt="Chafai brand logo with Shree Swami Samarth invocation" loading="lazy">
     </div>
 
+    <div class="chafai-video-wrap">
+      <video controls preload="metadata" poster="gallery/chafai-bottle.jpg">
+        <source src="videos/chafai-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
   </div>
 </section>
 
@@ -356,15 +363,12 @@ AOS.init({ duration: 1000, once: true });
     window.scrollTo({ top: targetPosition, behavior: 'instant' });
   }
 
-  // Run on initial load
   window.addEventListener('load', function() {
     scrollToHash(window.location.hash);
-    // Re-run after a delay to correct for any late image/layout shifts
     setTimeout(function() { scrollToHash(window.location.hash); }, 600);
     setTimeout(function() { scrollToHash(window.location.hash); }, 1200);
   });
 
-  // Also handle clicking nav links directly (in case hash doesn't change, e.g. already on page)
   document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
       e.preventDefault();
