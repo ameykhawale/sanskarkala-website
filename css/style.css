@@ -1205,3 +1205,13 @@ FIX: NAVBAR OVERFLOW / CUTOFF ON MEDIUM SCREENS
     max-width:1320px !important;
   }
 }
+/*=========================
+FIX: EXCESS WHITESPACE BEFORE SECTION HEADINGS
+=========================*/
+.section-space{
+  padding-top:60px !important;
+  padding-bottom:90px !important;
+}
+.mb-5{
+  margin-bottom:2rem !important;
+}
