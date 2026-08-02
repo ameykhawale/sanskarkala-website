@@ -9,9 +9,7 @@ Version : 1.0
 /*=========================
 GOOGLE FONTS
 =========================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap');
-
+/* Fonts imported at end of file for redesign v2 */
 
 /*=========================
 ROOT VARIABLES
@@ -26,10 +24,7 @@ ROOT VARIABLES
 --text:#2D2D2D;
 --white:#ffffff;
 
---heading:'Cinzel',serif;
---body:'Poppins',sans-serif;
---quote:'Cormorant Garamond',serif;
-
+/* Font families defined in redesign v2 section at end of file */
 --transition:0.4s ease;
 
 --shadow:0 15px 40px rgba(0,0,0,.12);
@@ -965,7 +960,6 @@ SLAM BOOK SECTION
 =========================*/
 .slambook-section{
   background:var(--cream);
-  scroll-margin-top:100px;
 }
 .slambook-card{
   max-width:480px;
@@ -1042,7 +1036,6 @@ FINAL CLEANUP — resolves leftover conflicting rules
 .locations{ background:var(--primary) !important; color:#fff !important; }
 .locations h2{ color:#fff !important; }
 
-.chafai-section{ background:#FBF3E7 !important; }
 .chafai-title{ color:#6E1423 !important; }
 .chafai-text{ color:#4a4a4a !important; }
 
@@ -1122,4 +1115,23 @@ ABSOLUTE FINAL OVERRIDE
 =========================*/
 a.navbar-brand{
   color:#ffffff !important;
+}
+/*=========================
+FIX: NAVBAR OVERFLOW / CUTOFF ON MEDIUM SCREENS
+=========================*/
+@media (min-width: 992px) and (max-width: 1300px){
+  .nav-link{
+    margin-left:14px !important;
+    font-size:0.85rem !important;
+  }
+  .nav-phone{
+    padding:7px 14px !important;
+    font-size:13px !important;
+  }
+}
+
+@media (max-width: 1300px){
+  .navbar-nav{
+    flex-wrap:nowrap !important;
+  }
 }
