@@ -963,7 +963,10 @@ SCROLLING NOTICE BAR
 /*=========================
 SLAM BOOK SECTION
 =========================*/
-.slambook-section{background:var(--cream);}
+.slambook-section{
+  background:var(--cream);
+  scroll-margin-top:100px;
+}
 .slambook-card{
   max-width:480px;
   margin:0 auto;
@@ -980,8 +983,29 @@ SLAM BOOK SECTION
   margin-bottom:18px;
   display:block;
 }
-.slambook-card h3{font-size:22px;margin-bottom:12px;}
-.slambook-card p{margin-bottom:24px;}
+.slambook-card h3{
+  font-size:22px;
+  margin-bottom:12px;
+  color:var(--primary) !important;
+}
+.slambook-card p{
+  margin-bottom:24px;
+  color:#555 !important;
+}
+.slambook-section h2{
+  color:var(--primary) !important;
+}
+.slambook-section p{
+  color:#555 !important;
+}
+@media(max-width:576px){
+  .slambook-card{
+    padding:36px 24px;
+  }
+  .slambook-icon{
+    font-size:40px;
+  }
+}
 
 /*====================================================
 FINAL CLEANUP — resolves leftover conflicting rules
@@ -1025,6 +1049,11 @@ FINAL CLEANUP — resolves leftover conflicting rules
 section, header, footer{ position:relative; z-index:1; }
 
 html, body{ overflow-x:hidden; width:100%; }
+
+/* Scroll margin for all anchor sections */
+#about, #classes, #gallery, #creations, #chafai, #slambook, #contact{
+  scroll-margin-top:100px;
+}
 
 /*====================================================
 REDESIGN v2 — refined typography & visual rhythm
