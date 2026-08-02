@@ -1402,3 +1402,16 @@ CHAFAI VIDEO
   max-height:520px;
   background:#000;
 }
+/*=========================
+FIX: NAVBAR OVERLAP WITH HERO TEXT
+=========================*/
+.custom-navbar{
+  background:rgba(8,25,45,0.92) !important;
+}
+.navbar-brand,
+.custom-navbar .nav-link{
+  color:#fff !important;
+}
+.hero{
+  padding-top:120px;
+}
