@@ -1117,3 +1117,9 @@ p{ font-size: 1rem !important; line-height:1.75 !important; color:#5a5a5a !impor
 /*====================================================
 END OF STYLE.CSS
 ====================================================*/
+/*=========================
+ABSOLUTE FINAL OVERRIDE
+=========================*/
+a.navbar-brand{
+  color:#ffffff !important;
+}
