@@ -1215,3 +1215,23 @@ FIX: EXCESS WHITESPACE BEFORE SECTION HEADINGS
 .mb-5{
   margin-bottom:2rem !important;
 }
+/*=========================
+VISITOR COUNTER
+=========================*/
+.visitor-strip{
+  background:#0B1E38;
+  text-align:center;
+  padding:16px 0;
+  color:#fff;
+  font-size:14px;
+}
+.visitor-strip p{
+  display:inline-block;
+  margin:0 8px 0 0;
+  color:#fff !important;
+  vertical-align:middle;
+}
+.visitor-strip img{
+  display:inline-block;
+  vertical-align:middle;
+}
