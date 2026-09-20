@@ -1235,3 +1235,105 @@ SITE STATS
   display:inline-block;
   vertical-align:middle;
 }
+/*=========================
+SLAM BOOK REEL
+=========================*/
+.reel-wrap{
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;
+  padding:10px 20px 30px;
+}
+.reel-track{
+  display:flex;
+  gap:20px;
+}
+.reel-card{
+  flex:0 0 auto;
+  width:260px;
+  scroll-snap-align:start;
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(22,58,112,0.1);
+  cursor:pointer;
+  transition:transform .3s ease;
+}
+.reel-card:hover{ transform:translateY(-6px); }
+.reel-card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+.reel-card-info{
+  padding:14px 16px;
+  text-align:left;
+}
+.reel-card-info p{
+  margin:0 0 4px;
+  font-size:13px;
+  color:#555 !important;
+}
+.reel-card-info .reel-name{
+  font-weight:700;
+  color:var(--primary) !important;
+  font-size:15px;
+}
+.reel-card-stats{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:8px;
+  font-size:12px;
+  color:#888 !important;
+}
+.reel-stars-mini{ color:#F58220; font-size:13px; }
+
+/* Lightbox */
+.reel-lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(8,25,45,0.96);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  padding:20px;
+}
+.reel-lightbox.active{ display:flex; }
+.reel-lightbox img{
+  max-width:90vw;
+  max-height:70vh;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.reel-lightbox-info{
+  color:#fff;
+  text-align:center;
+  margin-top:20px;
+}
+.reel-lightbox-info p{ color:#fff !important; margin-bottom:6px; }
+.reel-close{
+  position:absolute;
+  top:24px; right:32px;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:40px;
+  cursor:pointer;
+  line-height:1;
+}
+.reel-stars{
+  font-size:28px;
+  cursor:pointer;
+  margin:10px 0;
+}
+.reel-stars .star{ color:#555; transition:color .2s; }
+.reel-stars .star.filled{ color:#F58220; }
+
+@media(max-width:768px){
+  .reel-card{ width:200px; }
+  .reel-card img{ height:250px; }
+}

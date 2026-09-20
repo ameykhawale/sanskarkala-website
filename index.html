@@ -274,16 +274,28 @@
   <div class="container text-center">
     <span class="section-tag">Community</span>
     <h2>Our Rangoli Slam Book</h2>
-    <p style="max-width:640px;margin:0 auto 30px;color:#555 !important;">Made a rangoli you're proud of? Share it with us! Post your design on Instagram, tag <strong>@sanskarbhartirangolitraining</strong>, and use <strong>#SanskarKalaMoments</strong> — we love featuring our students' and community's work.</p>
-
-    <div class="slambook-card">
-      <i class="fa-brands fa-instagram slambook-icon"></i>
-      <h3>@sanskarbhartirangolitraining</h3>
-      <p>Follow us for daily rangoli inspiration, festive designs, and community features.</p>
-      <a href="https://www.instagram.com/sanskarbhartirangolitraining" target="_blank" class="btn btn-primary-custom">Follow &amp; Tag Us</a>
-    </div>
+    <p style="max-width:640px;margin:0 auto 30px;color:#555 !important;">Scroll through designs from our students and community. Tap any design to view full screen — and give it a star!</p>
   </div>
+
+  <div class="reel-wrap">
+    <div id="reel-track" class="reel-track"></div>
+  </div>
+
+  <p class="text-center" style="margin-top:24px;">
+    <a href="https://www.instagram.com/sanskarbhartirangolitraining" target="_blank" class="btn btn-primary-custom">Follow &amp; Tag Us <strong>#SanskarKalaMoments</strong></a>
+  </p>
 </section>
+
+<!-- Fullscreen lightbox -->
+<div id="reel-lightbox" class="reel-lightbox">
+  <button id="reel-close" class="reel-close">&times;</button>
+  <img id="reel-lightbox-img" src="" alt="">
+  <div class="reel-lightbox-info">
+    <p id="reel-lightbox-meta"></p>
+    <div class="reel-stars" id="reel-lightbox-stars"></div>
+    <p id="reel-lightbox-views"></p>
+  </div>
+</div>
 
 <section id="contact" class="contact-section section-space">
   <div class="container">
@@ -370,30 +382,25 @@ AOS.init({ duration: 1000, once: true });
     });
   }
 
-  // Handle initial page load with hash
   window.addEventListener('load', function() {
     if (window.location.hash) {
       scrollToHash(window.location.hash);
-      // Re-adjust after images load
       setTimeout(function() { scrollToHash(window.location.hash); }, 600);
       setTimeout(function() { scrollToHash(window.location.hash); }, 1200);
     }
   });
 
-  // Handle clicking anchor links
   document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
       const hash = this.getAttribute('href');
-      if (hash === '#') return; // Skip # links for home
+      if (hash === '#') return;
       e.preventDefault();
       history.pushState(null, null, hash);
-      scrollToHash(hash, true); // Use smooth scroll for clicks
+      scrollToHash(hash, true);
     });
   });
 </script>
 
-</body>
-</html>
 <script>
   (function() {
     const namespace = "sanskarkala-com";
@@ -419,6 +426,113 @@ AOS.init({ duration: 1000, once: true });
         .catch(() => displayCount('—'));
     }
   })();
+</script>
+
+<script>
+(function() {
+  const manifestUrl = 'slambook-manifest.json';
+  const track = document.getElementById('reel-track');
+  const lightbox = document.getElementById('reel-lightbox');
+  const lightboxImg = document.getElementById('reel-lightbox-img');
+  const lightboxMeta = document.getElementById('reel-lightbox-meta');
+  const lightboxStars = document.getElementById('reel-lightbox-stars');
+  const lightboxViews = document.getElementById('reel-lightbox-views');
+  const closeBtn = document.getElementById('reel-close');
+
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  function ordinal(n) {
+    const s = ["th","st","nd","rd"], v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  }
+
+  function parseFilename(filename) {
+    const name = filename.replace(/\.[^/.]+$/, "");
+    const parts = name.split("_");
+    if (parts.length < 3) return null;
+    const [person, dateStr, location] = parts;
+    const [day, month, year] = dateStr.split("-").map(Number);
+    const dateLabel = `${ordinal(day)} ${months[month - 1]} ${year}`;
+    return { person, dateLabel, location, filename };
+  }
+
+  function getStats(filename) {
+    const stats = JSON.parse(localStorage.getItem('sk_reel_stats') || '{}');
+    if (!stats[filename]) stats[filename] = { views: 0, myRating: 0 };
+    return stats[filename];
+  }
+  function saveStats(filename, data) {
+    const stats = JSON.parse(localStorage.getItem('sk_reel_stats') || '{}');
+    stats[filename] = data;
+    localStorage.setItem('sk_reel_stats', JSON.stringify(stats));
+  }
+
+  function renderStars(container, rating, onRate) {
+    container.innerHTML = '';
+    for (let i = 1; i <= 5; i++) {
+      const star = document.createElement('span');
+      star.className = 'star' + (i <= rating ? ' filled' : '');
+      star.textContent = '★';
+      star.addEventListener('click', (e) => {
+        e.stopPropagation();
+        onRate(i);
+      });
+      container.appendChild(star);
+    }
+  }
+
+  function openLightbox(item) {
+    const stats = getStats(item.filename);
+    stats.views += 1;
+    saveStats(item.filename, stats);
+
+    lightboxImg.src = `gallery/slambook/${item.filename}`;
+    lightboxMeta.innerHTML = `Drawn by: <strong>${item.person}</strong> &nbsp;|&nbsp; Date: <strong>${item.dateLabel}</strong> &nbsp;|&nbsp; Location: <strong>${item.location}</strong>`;
+    lightboxViews.textContent = `👁 ${stats.views} view${stats.views !== 1 ? 's' : ''} (on this device)`;
+
+    renderStars(lightboxStars, stats.myRating, (rating) => {
+      const s = getStats(item.filename);
+      s.myRating = rating;
+      saveStats(item.filename, s);
+      renderStars(lightboxStars, rating, arguments.callee);
+    });
+
+    lightbox.classList.add('active');
+  }
+
+  closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+
+  fetch(manifestUrl)
+    .then(res => res.json())
+    .then(filenames => {
+      filenames.forEach(filename => {
+        const item = parseFilename(filename);
+        if (!item) return;
+        const stats = getStats(filename);
+
+        const card = document.createElement('div');
+        card.className = 'reel-card';
+        card.innerHTML = `
+          <img src="gallery/slambook/${filename}" alt="Rangoli by ${item.person}" loading="lazy">
+          <div class="reel-card-info">
+            <p class="reel-name">${item.person}</p>
+            <p>📅 ${item.dateLabel}</p>
+            <p>📍 ${item.location}</p>
+            <div class="reel-card-stats">
+              <span class="reel-stars-mini">${'★'.repeat(stats.myRating)}${'☆'.repeat(5 - stats.myRating)}</span>
+              <span>👁 ${stats.views}</span>
+            </div>
+          </div>
+        `;
+        card.addEventListener('click', () => openLightbox(item));
+        track.appendChild(card);
+      });
+    })
+    .catch(() => {
+      track.innerHTML = '<p style="padding:20px;color:#888;">No designs added yet.</p>';
+    });
+})();
 </script>
 
 </body>
