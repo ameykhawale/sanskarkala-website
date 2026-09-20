@@ -18,22 +18,38 @@
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7922777d8edc4c5c92a4202e3d496170"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
-<div class="opportunity-banner" id="opportunity-banner" style="display:none;">
-  <div class="container opportunity-inner">
-    <span class="opportunity-badge">NEW</span>
-    <div class="opportunity-text">
-      <p id="opportunity-text-content"></p>
+<div id="top-banners">
+  <div class="notice-marquee">
+    <div class="notice-track">
+      <span>📍 Due to building redevelopment at our regular venue, classes are currently being held at a temporary nearby location. Please contact us for exact directions before visiting. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>📍 Due to building redevelopment at our regular venue, classes are currently being held at a temporary nearby location. Please contact us for exact directions before visiting. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </div>
-    <a href="tel:+919869990601" class="opportunity-cta">📞 कॉल करा</a>
-    <button class="opportunity-close" onclick="this.closest('.opportunity-banner').style.display='none'">&times;</button>
+  </div>
+
+  <div class="opportunity-banner" id="opportunity-banner" style="display:none;">
+    <div class="container opportunity-inner">
+      <span class="opportunity-badge">NEW</span>
+      <div class="opportunity-text">
+        <p id="opportunity-text-content"></p>
+      </div>
+      <a href="tel:+919869990601" class="opportunity-cta">📞 कॉल करा</a>
+      <button class="opportunity-close" onclick="document.getElementById('opportunity-banner').style.display='none'; adjustNavbarOffset();">&times;</button>
+    </div>
   </div>
 </div>
-<div class="notice-marquee">
-  <div class="notice-track">
-    <span>📍 Due to building redevelopment at our regular venue, classes are currently being held at a temporary nearby location. Please contact us for exact directions before visiting. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span>📍 Due to building redevelopment at our regular venue, classes are currently being held at a temporary nearby location. Please contact us for exact directions before visiting. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  </div>
-</div>
+
+<script>
+  function adjustNavbarOffset() {
+    const topBanners = document.getElementById('top-banners');
+    const navbar = document.querySelector('.custom-navbar');
+    if (!topBanners || !navbar) return;
+    const height = topBanners.offsetHeight;
+    navbar.style.top = height + 'px';
+    document.body.style.paddingTop = height + 'px';
+  }
+  window.addEventListener('load', adjustNavbarOffset);
+  window.addEventListener('resize', adjustNavbarOffset);
+</script>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
   <div class="container">
     <a class="navbar-brand" href="#">Sanskar Kala</a>
@@ -569,6 +585,7 @@ AOS.init({ duration: 1000, once: true });
       if (!text) return;
       textEl.innerHTML = text.trim().replace(/\n/g, '<br>');
       banner.style.display = 'block';
+      adjustNavbarOffset();
     })
     .catch(() => {});
 })();

@@ -1337,3 +1337,12 @@ SLAM BOOK REEL
   .reel-card{ width:200px; }
   .reel-card img{ height:250px; }
 }
+
+/*=========================
+FIX: STACKED TOP BANNERS + DYNAMIC NAVBAR OFFSET
+=========================*/
+#top-banners{
+  position:relative;
+  z-index:1002;
+}
+.opportunity-banner{ position:relative; }
