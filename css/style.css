@@ -1473,3 +1473,12 @@ FESTIVAL FLASH POPUP
   75%{ opacity:1; }
   100%{ opacity:0; }
 }
+
+/*=========================
+FIX: FLOATING CALENDAR BEING TRAPPED BY AOS TRANSFORMS
+=========================*/
+.floating-cal-btn,
+.floating-cal-panel{
+  position:fixed !important;
+  z-index:99999 !important;
+}
