@@ -578,5 +578,74 @@ AOS.init({ duration: 1000, once: true });
 })();
 </script>
 
+<script>
+(function() {
+  const YEAR = new Date().getFullYear();
+  const btn = document.getElementById('floating-calendar-btn');
+  const panel = document.getElementById('floating-calendar-panel');
+  const closeBtn = document.getElementById('floating-cal-close');
+  const listEl = document.getElementById('floating-cal-list');
+  const flashEl = document.getElementById('festival-flash');
+  const flashText = document.getElementById('festival-flash-text');
+
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const today = new Date().setHours(0,0,0,0);
+  const FLASH_WINDOW_DAYS = 5; // show flash popup if festival is within this many days
+
+  btn.addEventListener('click', () => panel.classList.toggle('active'));
+  closeBtn.addEventListener('click', () => panel.classList.remove('active'));
+
+  fetch(`Calender/${YEAR}.json`)
+    .then(res => res.json())
+    .then(festivals => {
+      festivals.forEach(f => {
+        const d = new Date(f.date);
+        const dDay = d.setHours(0,0,0,0);
+        const diffDays = Math.round((dDay - today) / 86400000);
+        const isUpcoming = diffDays >= 0 && diffDays <= 14;
+
+        const item = document.createElement('div');
+        item.className = 'floating-cal-item' + (isUpcoming ? ' upcoming' : '');
+        item.innerHTML = `
+          <span class="fname">${f.name}</span>
+          <span class="fdate">${d.getDate()} ${months[d.getMonth()]}</span>
+        `;
+        listEl.appendChild(item);
+
+        // Flash popup logic: only if festival is approaching AND not shown before to this browser
+        if (diffDays >= 0 && diffDays <= FLASH_WINDOW_DAYS) {
+          const flashKey = `sk_flash_seen_${f.name}_${f.date}`;
+          if (!localStorage.getItem(flashKey)) {
+            flashText.textContent = `✨ ${f.name} is almost here! ✨`;
+            flashEl.classList.add('show');
+            localStorage.setItem(flashKey, 'true');
+            setTimeout(() => { flashEl.classList.remove('show'); }, 1500);
+          }
+        }
+      });
+    })
+    .catch(() => {
+      listEl.innerHTML = '<p style="padding:10px;color:#888;font-size:13px;">Calendar unavailable.</p>';
+    });
+})();
+</script>
+
+<!-- Floating Calendar Widget -->
+<div id="floating-calendar-btn" class="floating-cal-btn">🗓️</div>
+<div id="floating-calendar-panel" class="floating-cal-panel">
+  <div class="floating-cal-header">
+    <span>Festivals This Year</span>
+    <button id="floating-cal-close">&times;</button>
+  </div>
+  <div id="floating-cal-list" class="floating-cal-list"></div>
+</div>
+
+<!-- Flash Popup -->
+<div id="festival-flash" class="festival-flash">
+  <div class="festival-flash-inner">
+    <p id="festival-flash-text"></p>
+  </div>
+</div>
+
 </body>
 </html>

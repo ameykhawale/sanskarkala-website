@@ -1,0 +1,17 @@
+[
+  { "name": "Makar Sankranti", "date": "2026-01-14", "note": "Harvest festival, kite flying, tilgul sweets" },
+  { "name": "Ganesh Jayanti", "date": "2026-01-22", "note": "Birth anniversary of Lord Ganesha" },
+  { "name": "Holi (Rangapanchami)", "date": "2026-03-04", "note": "Festival of colours" },
+  { "name": "Gudi Padwa", "date": "2026-03-19", "note": "Marathi New Year" },
+  { "name": "Akshaya Tritiya", "date": "2026-04-19", "note": "Auspicious day for new beginnings" },
+  { "name": "Maharashtra Din", "date": "2026-05-01", "note": "Formation Day of Maharashtra" },
+  { "name": "Raksha Bandhan", "date": "2026-08-28", "note": "Celebrating the bond between siblings" },
+  { "name": "Janmashtami", "date": "2026-09-04", "note": "Birth of Lord Krishna" },
+  { "name": "Ganesh Chaturthi", "date": "2026-09-14", "note": "Ganeshotsav begins — 10 days of celebration" },
+  { "name": "Anant Chaturdashi (Visarjan)", "date": "2026-09-25", "note": "Ganpati immersion" },
+  { "name": "Navratri Begins", "date": "2026-10-11", "note": "Nine nights of Goddess worship" },
+  { "name": "Dussehra", "date": "2026-10-20", "note": "Victory of good over evil" },
+  { "name": "Diwali (Lakshmi Puja)", "date": "2026-11-08", "note": "Festival of lights" },
+  { "name": "Balipratipada / Govardhan Puja", "date": "2026-11-10", "note": "Marathi New Year for business community" },
+  { "name": "Bhau Beej", "date": "2026-11-11", "note": "Celebrating the brother-sister bond" }
+]
