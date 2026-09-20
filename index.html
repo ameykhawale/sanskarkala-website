@@ -324,8 +324,7 @@
 </section>
 
 <div class="site-stats-strip">
-  <p>🌐 Total Visits: </p>
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=sanskarkala.com" alt="Visit Count">
+  <p>🌐 Total Visits: <span id="visit-count">—</span></p>
 </div>
 
 <footer>
@@ -391,6 +390,35 @@ AOS.init({ duration: 1000, once: true });
       scrollToHash(hash, true); // Use smooth scroll for clicks
     });
   });
+</script>
+
+</body>
+</html>
+<script>
+  (function() {
+    const namespace = "sanskarkala-com";
+    const key = "homepage-visits";
+    const hasVisited = localStorage.getItem('sk_has_visited');
+
+    function displayCount(count) {
+      document.getElementById('visit-count').textContent = count;
+    }
+
+    if (!hasVisited) {
+      fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+        .then(res => res.json())
+        .then(data => {
+          displayCount(data.value);
+          localStorage.setItem('sk_has_visited', 'true');
+        })
+        .catch(() => displayCount('—'));
+    } else {
+      fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
+        .then(res => res.json())
+        .then(data => displayCount(data.value))
+        .catch(() => displayCount('—'));
+    }
+  })();
 </script>
 
 </body>
