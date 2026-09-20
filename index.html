@@ -18,6 +18,16 @@
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7922777d8edc4c5c92a4202e3d496170"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
+<div class="opportunity-banner" id="opportunity-banner" style="display:none;">
+  <div class="container opportunity-inner">
+    <span class="opportunity-badge">NEW</span>
+    <div class="opportunity-text">
+      <p id="opportunity-text-content"></p>
+    </div>
+    <a href="tel:+919869990601" class="opportunity-cta">📞 कॉल करा</a>
+    <button class="opportunity-close" onclick="this.closest('.opportunity-banner').style.display='none'">&times;</button>
+  </div>
+</div>
 <div class="notice-marquee">
   <div class="notice-track">
     <span>📍 Due to building redevelopment at our regular venue, classes are currently being held at a temporary nearby location. Please contact us for exact directions before visiting. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -532,6 +542,35 @@ AOS.init({ duration: 1000, once: true });
     .catch(() => {
       track.innerHTML = '<p style="padding:20px;color:#888;">No designs added yet.</p>';
     });
+})();
+</script>
+
+<script>
+(function() {
+  const banner = document.getElementById('opportunity-banner');
+  const textEl = document.getElementById('opportunity-text-content');
+  const today = new Date().setHours(0,0,0,0);
+
+  fetch('notices/manifest.json')
+    .then(res => res.json())
+    .then(filenames => {
+      // Parse dates from filenames (YYYY-MM-DD.txt), keep only past/today, pick latest
+      const valid = filenames
+        .map(f => ({ file: f, date: new Date(f.replace('.txt','')).setHours(0,0,0,0) }))
+        .filter(f => !isNaN(f.date) && f.date <= today)
+        .sort((a, b) => b.date - a.date);
+
+      if (valid.length === 0) return;
+
+      const latest = valid[0].file;
+      return fetch(`notices/${latest}`).then(res => res.text());
+    })
+    .then(text => {
+      if (!text) return;
+      textEl.innerHTML = text.trim().replace(/\n/g, '<br>');
+      banner.style.display = 'block';
+    })
+    .catch(() => {});
 })();
 </script>
 
