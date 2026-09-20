@@ -1339,10 +1339,17 @@ SLAM BOOK REEL
 }
 
 /*=========================
-FIX: STACKED TOP BANNERS + DYNAMIC NAVBAR OFFSET
+FIX: STICKY NAVBAR (replaces fragile JS positioning)
 =========================*/
+.custom-navbar{
+  position:sticky !important;
+  top:0 !important;
+}
 #top-banners{
   position:relative;
   z-index:1002;
+}
+body{
+  padding-top:0 !important;
 }
 .opportunity-banner{ position:relative; }
